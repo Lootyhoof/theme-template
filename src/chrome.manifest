@@ -1,0 +1,7 @@
+skin    browser theme-template chrome/browser/
+skin    global theme-template	chrome/global/
+skin    mozapps theme-template chrome/mozapps/
+
+skin    os theme-template chrome/os/linux/
+skin    os theme-template chrome/os/darwin/ os=Darwin
+skin    os theme-template chrome/os/winnt/ os=WINNT

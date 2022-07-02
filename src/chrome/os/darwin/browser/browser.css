@@ -1,0 +1,152 @@
+:root {
+  --toolbox-after-color: #A0A0A0;
+
+  --tab-background: linear-gradient(transparent, hsla(0,0%,45%,.1) 1px, hsla(0,0%,32%,.2) 80%, hsla(0,0%,0%,.2));
+  --tab-background-hover: linear-gradient(hsla(0,0%,100%,.3) 1px, hsla(0,0%,75%,.2) 80%, hsla(0,0%,60%,.2));
+  --tab-border-radius: 6px;
+  --tab-box-shadow: inset 0.5px 1px 1px var(--tab-selected-highlight);
+  --tab-selected-highlight: rgba(255,255,255,.7);
+}
+  
+/* ::::: titlebar ::::: */
+
+#main-window[sizemode="normal"] > #titlebar {
+  -moz-appearance: -moz-window-titlebar;
+}
+
+#main-window[sizemode="maximized"] > #titlebar {
+  -moz-appearance: -moz-window-titlebar-maximized;
+}
+
+#titlebar-buttonbox {
+  -moz-appearance: -moz-window-button-box;
+}
+
+#main-window[sizemode="maximized"] #titlebar-buttonbox {
+  -moz-appearance: -moz-window-button-box-maximized;
+}
+
+.titlebar-placeholder[type="appmenu-button"] {
+  margin-left: 4px;
+}
+
+.titlebar-placeholder[type="caption-buttons"] {
+  margin-left: 10px;
+}
+
+/* titlebar command buttons */
+
+#titlebar-min {
+  -moz-appearance: -moz-window-button-minimize;
+}
+
+#titlebar-max {
+  -moz-appearance: -moz-window-button-maximize;
+}
+
+#main-window[sizemode="maximized"] #titlebar-max {
+  -moz-appearance: -moz-window-button-restore;
+}
+
+#titlebar-close {
+  -moz-appearance: -moz-window-button-close;
+}
+
+/* ensure titlebar on privacy windows is of correct size */
+#titlebar {
+  height: 22px;
+}
+
+/* ensure extra titlebar doesn't appear on normal (e.g. non-privacy) windows */
+#main-window:not([privatebrowsingmode=temporary]):not(:-moz-lwtheme) > #titlebar > #titlebar-content > #titlebar-buttonbox-container,
+#main-window:not([drawintitlebar=true]):not(:-moz-lwtheme) > #titlebar {
+  display: none;
+}
+
+#titlebar-spacer {
+  display: none;
+}
+
+#titlebar-buttonbox-container {
+  margin-left: 7px;
+  margin-top: 3px;
+}
+
+#main-window:-moz-lwtheme > #titlebar {
+  -moz-appearance: none;
+}
+
+/* Fix appcontent margins */
+#appcontent {
+  margin: 0 -5px;
+}
+
+/* Fix selected tab title */
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-text {
+  color: black;
+  text-shadow: none;
+}
+
+/* ::::: bookmark buttons ::::: */
+
+toolbarbutton.bookmark-item {
+  font-weight: normal;
+  color: #222;
+  border: 0;
+  border-radius: 10000px;
+  padding: 1px 8px;
+  margin: 0 0 1px;
+}
+
+.bookmark-item > .toolbarbutton-text {
+  display: -moz-box !important;
+  margin: 0 !important;
+}
+
+.bookmark-item > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+toolbarbutton.bookmark-item:hover,
+toolbarbutton.bookmark-item[open="true"] {
+  background-color: rgba(0,0,0,.205);
+}
+
+toolbarbutton.bookmark-item:active:hover,
+toolbarbutton.bookmark-item[open="true"] {
+  color: #FFF !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.4),0 1px rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,.5);
+}
+
+toolbarbutton.bookmark-item > menupopup {
+  margin-top: 2px;
+  margin-inline-start: 3px;
+}
+
+.bookmark-item > .toolbarbutton-icon {
+  width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+}
+
+.bookmark-item > .toolbarbutton-icon[label]:not([label=""]),
+.bookmark-item > .toolbarbutton-icon[type="menu"] {
+  margin-inline-end: 5px;
+}
+
+/* Blend the topmost toolbar with the titlebar */
+#main-window[tabsontop=false] #nav-bar:not(:-moz-lwtheme),
+#main-window[tabsontop=false] #PersonalToolbar[collapsed=true] ~ #TabsToolbar:not(:-moz-lwtheme),
+#main-window[tabsontop=true] #TabsToolbar:not(:-moz-lwtheme) {
+  -moz-appearance: toolbar;
+}
+
+/* Private browsing indicator */
+
+#main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
+  display: -moz-box;
+  content: "";
+  background: url("chrome://browser/skin/Privacy-16.png") center no-repeat;
+  width: 30px;
+}

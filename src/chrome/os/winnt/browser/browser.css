@@ -7,6 +7,8 @@
 
   --toolbox-after-color: ThreeDShadow;
 
+  --toolbar-custom-color: hsl(210,75%,92%);
+
   --tab-background: linear-gradient(transparent, hsla(0,0%,45%,.1) 1px, hsla(0,0%,32%,.2) 80%, hsla(0,0%,0%,.2));
   --tab-background-hover: linear-gradient(hsla(0,0%,100%,.3) 1px, hsla(0,0%,75%,.2) 80%, hsla(0,0%,60%,.2));
   --tab-border-radius: 6px;

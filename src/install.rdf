@@ -8,13 +8,29 @@
     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
+    <!-- Change your UUID here. This can either be in the id@name form 
+       - or the "bracket" form. It must be unique! -->
     <em:id>your_id@goes.here</em:id>
+    <!-- The theme version. Change this with every new release. -->
     <em:version>1.0.0</em:version>
+    <!-- The theme name. -->
     <em:name>Default Theme Template</em:name>
+    <!-- The theme description.-->
     <em:description>The Default Theme, packaged to build your own theme for Pale Moon.</em:description>
+    <!-- The theme creator - that's you! Make sure to use whichever
+       - name you prefer to be known as - this could either be a 
+       - username or your real name.-->
     <em:creator>Your Name Here</em:creator>
+    <!-- The extension type - this should never change. -->
     <em:type>4</em:type>
+    <!-- The internal name for the theme - make this unique
+       - so that nothing else will try to use it. It's important! 
+       - Also make sure to use the same name in chrome.manifest. -->
     <em:internalName>theme-template</em:internalName>
+    <!-- Legacy (but still probably used somewhere) flag to 
+       - tell lightweight themes they can be used with this theme.
+       - Note that in real world scenarios the two can't be used
+       - together without use of an extension that enables it. -->
     <em:skinnable>true</em:skinnable>
 
     <em:targetApplication>

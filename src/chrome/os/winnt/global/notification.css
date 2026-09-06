@@ -25,7 +25,8 @@
 }
 
 @media (-moz-os-version: windows-win8),
-       (-moz-os-version: windows-win10) {
+       (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   .messageCloseButton {
     margin: 0px;
   }
